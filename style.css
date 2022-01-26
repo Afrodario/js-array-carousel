@@ -8,13 +8,89 @@ body {
     background-color: lightgray;
 }
 
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
 .container {
     border: 1px solid black;
     background-color: blue;
     height: 60vh;
-    width: 80%;
+    width: 70%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+#current-photo {
+    background-color: red;
+    height: 60vh;
+    width: 80%;
+    position: relative;
+    float: left;
+}
+
+#current-photo img, .thumb-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#thumb-container {
+    background-color: green;
+    height: 60vh;
+    width: 20%;
+    float: left;
+    position: relative;
+}
+
+.thumb-photo {
+    border: 1px solid black;
+    background-color: orange;
+    width: 100%;
+    height: calc(60vh / 5);
+}
+
+#photo-box {
+    background-color: purple;
+    border: 1px solid black;
+    height: 80px;
+    width: 30%;
+    position: absolute;
+    bottom: 15px;
+    right: 0;
+    text-align: right;
+    padding: 15px;
+    color: white;
+}
+
+.arrow {
+    background-color: lightgray;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    color: black;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.arrow:hover {
+    background-color: gray;
+}
+
+.arrow-up {
+    top: 5px;
+}
+
+.arrow-down {
+    bottom: 5px;
 }
