@@ -17,7 +17,6 @@ body {
 }
 
 .container {
-    border: 1px solid black;
     background-color: blue;
     height: 60vh;
     width: 70%;
@@ -50,7 +49,6 @@ body {
 }
 
 .thumb-photo {
-    border: 1px solid black;
     background-color: orange;
     width: 100%;
     height: calc(60vh / 5);
@@ -58,7 +56,6 @@ body {
 
 #photo-box {
     background-color: purple;
-    border: 1px solid black;
     height: 80px;
     width: 30%;
     position: absolute;
@@ -76,11 +73,11 @@ body {
     border-radius: 50%;
     color: black;
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 9%;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    z-index: 100;
 }
 
 .arrow:hover {
