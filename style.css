@@ -16,6 +16,22 @@ body {
     flex-direction: column;
 }
 
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+h3 {
+    display: none;
+}
+
+h3.show {
+    display: block;
+}
+
 .container {
     background-color: blue;
     height: 60vh;
@@ -56,8 +72,6 @@ body {
 
 #photo-box {
     background-color: purple;
-    height: 80px;
-    width: 30%;
     position: absolute;
     bottom: 15px;
     right: 0;

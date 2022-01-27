@@ -23,6 +23,7 @@ const text = [
 ]
 
 let slides = "";
+let titles = "";
 
 for (let i = 0; i < items.length; i++) {
 
@@ -31,7 +32,55 @@ for (let i = 0; i < items.length; i++) {
                 </div>`;
     // '<div class="thumb-photo"><img src="' + items[i] + '"></div>';
 
+    titles += `<h3>${title[i]}</h3>`;
+
 }
 
 let thumbContainer = document.getElementById("thumb-container");
 thumbContainer.innerHTML = slides;
+
+let titlesContainer = document.getElementById("photo-box");
+titlesContainer.innerHTML = titles;
+
+let prevSlide = document.getElementById("prev");
+let nextSlide = document.getElementById("next");
+
+let counter = 0;
+console.log(counter);
+
+let titleShow = document.getElementsByTagName("H3");
+
+if (counter == 0) {
+    titleShow[counter].classList.add("show");
+    console.log(titleShow);
+}
+
+nextSlide.addEventListener("click",
+    function() {
+        counter += 1;
+        console.log(counter);
+
+        if (counter < 5) {
+            titleShow[counter].classList.add("show");
+            titleShow[counter -1].classList.remove("show");
+        } else if (counter == 5) {
+            titleShow[counter -1].classList.remove("show");
+            counter = 0;
+            titleShow[counter].classList.add("show");
+        }
+
+    }
+
+)
+
+prevSlide.addEventListener("click",
+    function() {
+        counter -= 1;
+        console.log(counter);
+
+        titleShow[counter].classList.add("show");
+        titleShow[counter +1].classList.remove("show");
+
+    }
+
+)
