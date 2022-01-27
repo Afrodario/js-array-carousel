@@ -77,7 +77,6 @@ body {
 }
 
 #photo-box {
-    border: 1px solid black;
     position: absolute;
     bottom: 15px;
     right: 20%;

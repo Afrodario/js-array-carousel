@@ -96,7 +96,8 @@ prevSlide.addEventListener("click",
         } else {
             counter = 4;
             titleShow[0].classList.remove("show");
-            slideShow[0].classList.remove("show");
+            slideShow[0].classList.remove("show")
+            slideShow[4].classList.add("show");
         }
 
         if (counter < 5) {
