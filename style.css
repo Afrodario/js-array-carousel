@@ -24,16 +24,23 @@ body {
     display: block;
 }
 
-h3 {
+.photo-text {
     display: none;
 }
 
-h3.show {
+.photo-text.show {
+    display: block;
+}
+
+#current-photo img {
+    display: none;
+}
+
+#current-photo img.show {
     display: block;
 }
 
 .container {
-    background-color: blue;
     height: 60vh;
     width: 70%;
     position: absolute;
@@ -43,7 +50,6 @@ h3.show {
 }
 
 #current-photo {
-    background-color: red;
     height: 60vh;
     width: 80%;
     position: relative;
@@ -71,13 +77,14 @@ h3.show {
 }
 
 #photo-box {
-    background-color: purple;
+    border: 1px solid black;
     position: absolute;
     bottom: 15px;
-    right: 0;
+    right: 20%;
     text-align: right;
     padding: 15px;
     color: white;
+    z-index: 200;
 }
 
 .arrow {

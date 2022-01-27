@@ -23,21 +23,30 @@ const text = [
 ]
 
 let slides = "";
+let thumbs = "";
 let titles = "";
 
 for (let i = 0; i < items.length; i++) {
 
-    slides += `<div class="thumb-photo">
-                <img src="${items[i]}">
+    slides += `<img src=${items[i]}>`;
+
+    thumbs += `<div class="thumb-photo">
+                <img src=${items[i]}>
                 </div>`;
     // '<div class="thumb-photo"><img src="' + items[i] + '"></div>';
 
-    titles += `<h3>${title[i]}</h3>`;
+    titles += `<div class="photo-text">
+                <h3>${title[i]}</h3>
+                <p>${text[i]}</p>
+                </div>`;
 
 }
 
+let slidesContainer = document.getElementById("current-photo");
+slidesContainer.innerHTML = slides;
+
 let thumbContainer = document.getElementById("thumb-container");
-thumbContainer.innerHTML = slides;
+thumbContainer.innerHTML = thumbs;
 
 let titlesContainer = document.getElementById("photo-box");
 titlesContainer.innerHTML = titles;
@@ -48,10 +57,12 @@ let nextSlide = document.getElementById("next");
 let counter = 0;
 console.log(counter);
 
-let titleShow = document.getElementsByTagName("H3");
+let titleShow = document.getElementsByClassName("photo-text");
+let slideShow = document.getElementsByTagName("IMG");
 
 if (counter == 0) {
     titleShow[counter].classList.add("show");
+    slideShow[counter].classList.add("show");
     console.log(titleShow);
 }
 
@@ -63,10 +74,14 @@ nextSlide.addEventListener("click",
         if (counter < 5) {
             titleShow[counter].classList.add("show");
             titleShow[counter -1].classList.remove("show");
+            slideShow[counter].classList.add("show");
+            slideShow[counter -1].classList.remove("show");
         } else if (counter == 5) {
             titleShow[counter -1].classList.remove("show");
+            slideShow[counter -1].classList.remove("show");
             counter = 0;
             titleShow[counter].classList.add("show");
+            slideShow[counter].classList.add("show");
         }
 
     }
@@ -75,11 +90,21 @@ nextSlide.addEventListener("click",
 
 prevSlide.addEventListener("click",
     function() {
-        counter -= 1;
-        console.log(counter);
+        if (counter > 0) {
+            counter -= 1;
+            console.log(counter);
+        } else {
+            counter = 4;
+            titleShow[0].classList.remove("show");
+            slideShow[0].classList.remove("show");
+        }
 
-        titleShow[counter].classList.add("show");
-        titleShow[counter +1].classList.remove("show");
+        if (counter < 5) {
+            titleShow[counter].classList.add("show");
+            titleShow[counter +1].classList.remove("show");
+            slideShow[counter].classList.add("show");
+            slideShow[counter +1].classList.remove("show");
+        } 
 
     }
 
